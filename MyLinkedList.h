@@ -1,5 +1,6 @@
 #ifndef MYLINKEDLIST_H
 #define MYLINKEDLIST_H
+using namespace std;
 
 struct MyNodoLL{
     int data;
@@ -14,18 +15,26 @@ struct MyNodoLL{
 };
 
 class MyLinkedList{
-    private:
+    public:
         int size;
         MyNodoLL*head;
         MyNodoLL*tail;
-    public:
-        MyLinkedList();
-        //-MyLinkenList();
-        int length();
-        bool isEmpty();
-        int first();
-        int last();
-        void insertFirst(int data);
+    //public:
+        MyLinkedList(); //
+        ~MyLinkedList();
+        int length(); //
+        bool isEmpty(); //
+        int first(); //
+        int last(); //
+        int getAt(int pos);
+        void setAt(int pos,int data);
+        void insertFirst(int data); //
+        void insertLast(int data);
+        void insertAt(int pos,int data);
+        void removeFirst(); //
+        void removeLast();
+        void removeAt(int pos);
+        friend ostream operator<<(ostream& os, const MyLinkedList& l);
 };
 
 #endif
